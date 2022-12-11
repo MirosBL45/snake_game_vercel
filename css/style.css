@@ -1,0 +1,217 @@
+#rules, #reload {
+  display: inline-block;
+  width: 8.125rem;
+  height: 2.55rem;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.313rem;
+  text-shadow: 1px 1px 1px #000;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.27s;
+}
+#rules:hover, #reload:hover {
+  transform: scale(0.98);
+}
+#rules:active, #reload:active {
+  font-weight: bold;
+}
+
+#reload {
+  background: hsl(152deg, 70%, 61%);
+  font-size: 0.938rem;
+  display: none;
+}
+
+#rules {
+  background: hsl(65deg, 65%, 47%);
+  font-size: 0.938rem;
+  display: inline-block;
+}
+
+.moveBtn {
+  border-radius: 0.313rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: hsl(152deg, 70%, 61%);
+  transition: 0.27s;
+}
+.moveBtn:hover {
+  transform: scale(0.98);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 120%;
+  }
+}
+@media only screen and (max-width: 539px) {
+  html {
+    font-size: 85%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  background: lightslategrey;
+}
+
+.main_heading {
+  margin-top: 3rem;
+  font-size: 4rem;
+}
+
+#board {
+  margin: 3rem 0;
+}
+
+.wrapper_directions {
+  display: none;
+}
+@media only screen and (max-width: 992px) {
+  .wrapper_directions {
+    display: block;
+  }
+}
+
+.direction_btns {
+  width: 70%;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.direction_btns button {
+  height: 6rem;
+}
+.direction_btns #upBtn {
+  grid-column: 2/3;
+}
+.direction_btns #downBtn {
+  grid-area: 2/2/3/3;
+}
+.direction_btns #leftBtn {
+  grid-area: 2/1/3/2;
+}
+.direction_btns #rightBtn {
+  grid-area: 2/3/3/4;
+}
+
+.score_info {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.score_info #score {
+  background: hsl(152deg, 70%, 61%);
+}
+
+.div_buttons {
+  margin: 0.6rem 0;
+}
+
+.rules_modal {
+  text-shadow: none;
+  display: none;
+  background-color: hsl(0deg, 0%, 30%);
+  color: hsl(0deg, 0%, 85%);
+  box-shadow: rgba(255, 255, 255, 0.8) 0 0 1000px 1000px;
+  max-width: 40.62rem;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 0.7rem;
+  position: absolute;
+  top: 1%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: left;
+}
+.rules_modal h3 {
+  margin: 1rem 0;
+  font-size: 2.7rem;
+}
+.rules_modal p {
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+}
+.rules_modal #closeModal {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: hsl(0deg, 0%, 85%);
+  background-color: transparent;
+  border: 0;
+  font-size: 1.56rem;
+  font-weight: bold;
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+  cursor: pointer;
+}
+
+footer .footer_description {
+  padding: 0.6rem 0.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+footer .footer_description a {
+  transition: 0.27s;
+  text-decoration: none;
+  color: hsl(195deg, 53%, 71%);
+}
+footer .footer_description a:hover {
+  color: hsl(289deg, 72%, 27%);
+}
+
+@media (orientation: landscape) {
+  .main_heading {
+    margin-top: 0.6rem;
+    font-size: 3.5rem;
+  }
+  #board {
+    margin: 0.7rem 0;
+  }
+  .wrapper_directions {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+  }
+  .direction_btns {
+    width: 100%;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+  }
+  .direction_btns button {
+    height: 6rem;
+    width: 10rem;
+  }
+  .direction_btns #upBtn {
+    grid-column: 1/2;
+  }
+  .direction_btns #downBtn {
+    grid-area: 1/6/2/7;
+  }
+  .direction_btns #leftBtn {
+    grid-area: 2/1/3/2;
+  }
+  .direction_btns #rightBtn {
+    grid-area: 2/6/3/7;
+  }
+}

@@ -1,0 +1,41 @@
+@mixin responseMedia($dimension) {
+    @if $dimension ==phone {
+        @media only screen and (max-width: 400px) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $dimension ==bigPhone {
+        @media only screen and (max-width: 539px) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $dimension ==tab-port {
+        @media only screen and (max-width: 600px) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $dimension ==tab-land {
+        @media only screen and (max-width: 992px) {
+            @content
+        }
+
+        ;
+    }
+
+    @if $dimension ==big-desktop {
+        @media only screen and (min-width: 1200px) {
+            @content
+        }
+
+        ;
+    }
+}

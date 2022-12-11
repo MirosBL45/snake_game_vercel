@@ -1,0 +1,196 @@
+@import 'buttons';
+
+@import 'media';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    @include responseMedia(big-desktop) {
+        font-size: 120%;
+    }
+
+    @include responseMedia(bigPhone) {
+        font-size: 85%;
+    }
+
+    @include responseMedia(phone) {
+        font-size: 75%; //9px=1rem; 9/16px=56.25%
+    }
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background: lightslategrey;
+    // background: lightsteelblue;
+}
+
+.main_heading {
+    margin-top: 3rem;
+    font-size: 4rem;
+}
+
+#board {
+    margin: 3rem 0;
+}
+
+.wrapper_directions {
+    display: none;
+
+    @include responseMedia(tab-land) {
+        display: block;
+    }
+}
+
+.direction_btns {
+    width: 70%;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+
+    button {
+        height: 6rem;
+    }
+
+    #upBtn {
+        grid-column: 2/3;
+    }
+
+    #downBtn {
+        grid-area: 2/2/3/3;
+    }
+
+    #leftBtn {
+        grid-area: 2/1/3/2;
+    }
+
+    #rightBtn {
+        grid-area: 2/3/3/4;
+    }
+}
+
+.score_info {
+    font-size: 2rem;
+    font-weight: bold;
+
+    #score {
+        background: $green_background;
+    }
+}
+
+.div_buttons {
+    margin: 0.6rem 0;
+}
+
+.rules_modal {
+    text-shadow: none;
+    display: none;
+    background-color: hsl(0, 0%, 30%);
+    color: hsl(0, 0%, 85%);
+    box-shadow: rgba(255, 255, 255, 0.8) 0 0 1000px 1000px;
+    max-width: 40.62rem;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 0.7rem;
+    position: absolute;
+    top: 1%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: left;
+
+    h3 {
+        margin: 1rem 0;
+        font-size: 2.7rem;
+    }
+
+    p {
+        margin: 1.5rem 0;
+        font-size: 1.5rem;
+    }
+
+    #closeModal {
+        height: 1.25rem;
+        width: 1.25rem;
+        color: hsl(0, 0%, 85%);
+        background-color: transparent;
+        border: 0;
+        font-size: 1.56rem;
+        font-weight: bold;
+        position: absolute;
+        right: 1.2rem;
+        top: 1.2rem;
+        cursor: pointer;
+    }
+}
+
+
+footer {
+
+    .footer_description {
+        padding: 0.6rem 0.5rem;
+        font-weight: bold;
+        text-align: center;
+
+        a {
+            transition: 0.27s;
+            text-decoration: none;
+            color: hsl(195, 53%, 71%);
+        }
+
+        a:hover {
+            color: hsl(289, 72%, 27%)
+        }
+    }
+}
+
+@media (orientation: landscape) {
+    .main_heading {
+        margin-top: 0.6rem;
+        font-size: 3.5rem;
+    }
+
+    #board {
+        margin: 0.7rem 0;
+    }
+
+    .wrapper_directions {
+        width: 100%;
+        position: absolute;
+        top: 35%;
+    }
+
+    .direction_btns {
+        width: 100%;
+        margin: 0 auto 3rem;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0.5rem;
+
+        button {
+            height: 6rem;
+            width: 10rem;
+        }
+
+        #upBtn {
+            grid-column: 1/2;
+        }
+
+        #downBtn {
+            grid-area: 1/6/2/7;
+        }
+
+        #leftBtn {
+            grid-area: 2/1/3/2;
+        }
+
+        #rightBtn {
+            grid-area: 2/6/3/7;
+        }
+    }
+}

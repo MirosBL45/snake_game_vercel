@@ -1,0 +1,53 @@
+$green_background: hsl(152, 70%, 61%);
+$yellow_background: hsl(65, 65%, 47%);
+
+%btn {
+    display: inline-block;
+    width: 8.125rem;
+    height: 2.55rem;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.313rem;
+    text-shadow: 1px 1px 1px #000;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.27s;
+
+    &:hover {
+        transform: scale(0.98);
+    }
+
+    &:active {
+        font-weight: bold
+    }
+}
+
+#reload {
+    @extend %btn;
+    background: $green_background;
+    font-size: 0.938rem;
+    display: none;
+}
+
+#rules {
+    @extend %btn;
+    background: $yellow_background;
+    font-size: 0.938rem;
+    display: inline-block;
+}
+
+.moveBtn {
+    border-radius: 0.313rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: $green_background;
+    transition: 0.27s;
+
+    &:hover {
+        transform: scale(0.98);
+    }
+}
